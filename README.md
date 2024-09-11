@@ -5,13 +5,8 @@ Features
 
 Compilation and Setup
 
-bash
 
-git clone https://github.com/tviejo/Cub3D_Map_Generator.git
-
-    Navigate to the project directory and compile the code:
-
-bash
+    git clone https://github.com/tviejo/Cub3D_Map_Generator.git
 
     cd cub3d-map-generator
     make
@@ -22,27 +17,26 @@ Run the executable with the desired parameters:
 
 Parameters
 
-    mode:
-        0 for room generation
-        1 for maze generation
-    width: The width of the map.
-    height: The height of the map.
-    density: Density of the obstacles in the map (e.g., walls).
-    nb_monster: The number of monsters to place on the map.
-    nb_door: The number of doors to place on the map.
+mode:
+    0 for room generation
+    1 for maze generation
+width: The width of the map.
+height: The height of the map.
+density: Density of the obstacles in the map (e.g., walls).
+nb_monster: The number of monsters to place on the map.
+nb_door: The number of doors to place on the map.
 
 Example
 
-bash
-
-./map_generator 0 50 50 40 5 5
+    ./map_generator 0 50 50 40 5 5
 
 This command will generate a room (mode 0) with the following parameters:
 
-    Map size: 50x50
-    40% density of walls/obstacles
-    5 monsters
-    5 doors
+Map size: 50x50
+40% density of walls/obstacles
+5 monsters
+5 doors
+
 
 License
 
