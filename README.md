@@ -1,4 +1,4 @@
-#Map Generator for Cub3D
+# Map Generator for Cub3D
 
 This project is a Map Generator for Cub3D, part of the curriculum at School 42. The tool automatically generates maps based on the parameters you provide, allowing you to create different styles of maps like rooms or mazes with custom configurations for width, height, density, monsters, and doors.
 Features
@@ -57,7 +57,7 @@ Compilation and Setup
 
 bash
 
-git clone git@github.com:tviejo/Cub3D_Map_Generator.git
+git clone https://github.com/tviejo/Cub3D_Map_Generator.git
 
     Navigate to the project directory and compile the code:
 
