@@ -23,9 +23,11 @@ OBJS		=	$(patsubst %.c, $(OBJ_DIR)%.o, $(SRCS))
 
 CC			=	cc
 
-CFLAGS		=	-Wall -Wextra -Werror -MMD -MP -O2 -g3
+CFLAGS		=	-Wall -Wextra -Werror -MMD -MP -O2 -g3 
 
 INCLUDES 	= 	-I -I/includes/ 
+
+LIB			=	-lm
 
 D_FILES		=	$(OBJS:.o=.d)
 
@@ -52,7 +54,7 @@ all: 			${NAME}
 				@echo "$(GREEN)$(BOLD_START)${NAME} created$(BOLD_END)$(END)"
 
 ${NAME}: 		${OBJS}
-				$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME)
+				$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) -o $(NAME) $(LIB)
 
 $(OBJ_DIR)%.o: %.c
 				@echo "$(BLUE)Compiling: $@ $(END)"

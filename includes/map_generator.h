@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 14:03:12 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 15:09:39 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/11 23:17:24 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <time.h>
+# include <math.h>
 
 # define ROOM 0
 # define MAZE 1
@@ -36,9 +37,9 @@
 # define MIN_HEIGHT 10
 # define MAX_DENSITY 100
 # define MIN_DENSITY 0
-# define MAX_NB_MONSTER 50
+# define MAX_NB_MONSTER 500
 # define MIN_NB_MONSTER 0
-# define MAX_NB_DOOR 50
+# define MAX_NB_DOOR 500
 # define MIN_NB_DOOR 0
 
 typedef struct s_room

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:06:39 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 14:26:57 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/11 23:18:52 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	add_door(t_data *data)
 
 	i = 0;
 	nb_door = 0;
-	while (i < 1000 && nb_door < 5)
+	while (i < 100000 && nb_door < data->nb_door)
 	{
 		i++;
 		x = rand() % (data->width - 3);

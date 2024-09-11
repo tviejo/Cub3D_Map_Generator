@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:01:48 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 15:06:33 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/11 23:10:32 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void	single_room_placement(t_data *data)
 	int		i;
 	int		j;
 
-	room.width = rand() % (data->width / 2 + 1);
-	room.height = rand() % (data->height / 2 + 1);
+	room.width = rand() % (data->width / 4 + 1);
+	room.height = rand() % (data->height / 4 + 1);
 	room.x = rand() % (data->width - room.width);
 	room.y = rand() % (data->height - room.height);
 	if (room_is_empty(data, room) == true)
@@ -45,7 +45,7 @@ static void	room_placement(t_data *data)
 	int	i;
 
 	i = 0;
-	while (i < data->density / 5)
+	while (i < data->density * sqrt((data->width * data->height) / 100))
 	{
 		single_room_placement(data);
 		i++;

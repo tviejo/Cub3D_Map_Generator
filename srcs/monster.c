@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:02:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 14:26:48 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/11 23:18:27 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	add_monster(t_data *data)
 
 	nb_monster = 0;
 	x = 0;
-	while (x++ < 1000 && nb_monster < data->nb_monster)
+	while (x++ < 100000 && nb_monster < data->nb_monster)
 	{
 		i = rand() % data->height;
 		j = rand() % data->width;
