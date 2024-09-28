@@ -6,30 +6,57 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 14:03:12 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 23:17:24 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/28 17:05:00 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_GENERATOR_H
 # define MAP_GENERATOR_H
 
+# include <fcntl.h>
+# include <math.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <time.h>
-# include <math.h>
+# include <unistd.h>
 
-# define ROOM 0
-# define MAZE 1
+// change the path to the textures
+
+# define TEXT_NORTH "textures/north.xpm"
+# define TEXT_SOUTH "textures/south.xpm"
+# define TEXT_EAST "textures/east.xpm"
+# define TEXT_WEST "textures/west.xpm"
+
+// change the colors of the floor and the ceiling
+
+# define COLOR_FLOOR 255, 0, 0
+# define COLOR_CEILING 0, 255, 0
+
+// change the characters on the map
+
 # define CHAR_MONSTER 'A'
 # define CHAR_DOOR 'C'
 
+// change the mode to print the map int the terminal or create a .cub file
+// 0 = print the map in the terminal
+// 1 = create a .cub file
+
+# define PRINT_MAP 0
+
+// default settings
+
+# define ROOM 0
+# define MAZE 1
 # define DEFAULT_MODE 0
 # define DEFAULT_WIDTH 10
 # define DEFAULT_HEIGHT 10
 # define DEFAULT_DENSITY 30
 # define DEFAULT_NB_MONSTER 0
 # define DEFAULT_NB_DOOR 0
+
+// limits (can be changed but be careful)
 
 # define MAX_WIDTH 1000
 # define MIN_WIDTH 10
@@ -80,11 +107,12 @@ void				add_door(t_data *data);
 
 bool				parse(int argc, char **argv, t_data *data);
 void				init_data(t_data *data);
-void				close(t_data *data);
+void				close_and_free(t_data *data);
 bool				place_is_valid_for_player(t_data *data, int x, int y);
 bool				room_is_empty(t_data *data, t_room room);
 void				fill_with_wall(t_data *data);
 void				print_map(t_data *data);
 void				close_border(t_data *data);
+void				create_file(t_data *data);
 
 #endif

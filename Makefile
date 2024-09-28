@@ -16,6 +16,7 @@ SRCS		+= maze.c
 SRCS		+= parsing.c
 SRCS		+= init.c
 SRCS		+= utils.c
+SRCS		+= create_file.c
 
 vpath %.c $(SRC_DIR)
 

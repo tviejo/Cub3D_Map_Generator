@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:11:24 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 14:59:16 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/28 16:51:39 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	free_map(t_data *data)
 	free(data->map);
 }
 
-void	close(t_data *data)
+void	close_and_free(t_data *data)
 {
 	free_map(data);
 	clear_rooms(&data->room);

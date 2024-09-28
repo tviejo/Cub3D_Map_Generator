@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 14:02:05 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/11 14:48:47 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/28 17:03:04 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (parse(argc, argv, &data) == false)
 	{
-		close(&data);
+		close_and_free(&data);
 		return (EXIT_FAILURE);
 	}
 	if (data.mode == MAZE)
@@ -29,7 +29,10 @@ int	main(int argc, char **argv)
 	add_door(&data);
 	add_player(&data);
 	add_monster(&data);
-	print_map(&data);
-	close(&data);
+	if (PRINT_MAP == true)
+		print_map(&data);
+	else
+		create_file(&data);
+	close_and_free(&data);
 	return (EXIT_SUCCESS);
 }
